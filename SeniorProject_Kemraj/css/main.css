@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Nav background */
+.navbar.bg-faded {
+    background-color: #fff;}
+/* Logo background */           
+.logo-bg-col{background-color:#10733d;}
+/* Footer color */
+footer{background-color:#10733d;}
+.footer-twxt{ color:#fff;}
+/* Footer space */
+.footer-space{margin-top:18px;}
+.imgcen{     display: block;
+    margin: auto;
+   width: ;}
+.ctnter{ margin: 0 auto 0 auto;}
+.txtcenter {text-align: center;}
+ 
+h6 { color: #fff; font-size: 70px; text-transform: uppercase; text-align:center}
+/* Main logo click */
+a.logolink:link {color: #fff;}
+a.logolink:visited  {color: #fff;}
+a.logolink:hover  { color: #000; font-size: 72px;}
+a.logolink:active { color:  #fff; font-size: 70px}
