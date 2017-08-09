@@ -1,6 +1,11 @@
 ﻿@charset "utf-8";
 /* CSS Document */
 
+/*Main Background */
+body{
+	background-image: url("http://www.reesjonesinc.com/east-lake/images/gallery/6.jpg");
+}
+
 /* Nav background */
 .navbar.bg-faded {
     background-color: #fff;}
