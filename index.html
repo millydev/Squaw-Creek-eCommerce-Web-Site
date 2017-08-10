@@ -3,6 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Squaw Creek Golf Course - Tee Times</title>
+<!--JavaScript link-->
+<script src="JavaScript/jquery-3.2.1.min (4).js"></script>
+<script src="JavaScript/plugger.js"></script>
 
  
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -48,6 +51,9 @@
       <li class="nav-item">
         <a class="nav-link" href="sign-up.html">Sign Up</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Contact-us.html">Contact Us</a>
+      </li>
 
 
     
@@ -56,28 +62,47 @@
 </nav>
 
   
-  <div class="col-12 logo-bg-col"> <h6> <a class="logolink" href="#" >SQuaw creek golf couse</a>  </h6> </div>
-  
-
-    <div class="col-12 col-md-auto">
-	<a href="about-us.html">ABOUT</a>
-	<br>
-	<br>
-	<a href="Events.html">EVENTS</a>
-	<br>
-	<br>
-	<a href="photos.html">GALLERY</a>
-	<br>
-	<br>
-	<a href="Shop.html">MERCHANDISES</a>
-    </br></br></br></br></br></br></br></br>
-    
+  <div class="col-12 logo-bg-col"> <h6> <a class="logolink" href="#" >SQuaw Creek Golf Course</a>  </h6> </div>
+  <!--SlideShow-->
     </div>
+    <div id="container">
+        <div id="slideshow" class="cycle-slideshow"
+             data-cycle-fx="fade"
+             data-cycle-manual-fx="scrollHorz"
+             data-cycle-pager-fx="fade"
+             data-cycle-manual-speed="400"
+             data-cycle-prev="#prev"
+             data-cycle-next="#next"
+             data-cycle-speed="600"
+             data-cycle-timeout="3000"
+             data-cycle-pager="#pager"
+             data-cycle-pager-template="<a href='#'><img src='{{src}}' width=150 height=100></a>">
+            <img src="Photos/pexels-photo-209982.jpeg" />
+            <img src="photos/pexels-photo-296878.jpeg" />
+            <img src="photos/pexels-photo-92858.jpeg" />
+            <img src="Photos/pexels-photo-274262.jpeg" />
+            <img src="Photos/pexels-photo-52953.jpeg" />
+            <img src="Photos/pexels-photo-424758.jpeg" />
+            
+        </div>
+        <div id="pager"></div>
+        <img id="prev"src="photos/arrow-2079324_640.png" />
+        <img id="next"src="photos/arrow-2440270_640.png" />
+
+        
+    </div>
+    <div>
+        <!--Page content-->
+        <p>Test 1</p>
+
+
+
+    </div>
+
+    <!--Footer-->
 <footer>
- 
-     
-     <div class="col-12 ctnter"><img class="imgcen" src="img/squaw-footer.png" width="114" height="75" /></div>
-   
+    
+    <div class="col-12 ctnter"><img class="imgcen" src="img/squaw-footer.png" width="114" height="75" /></div>
    
      <div class="col-12 footer-twxt txtcenter">
 
