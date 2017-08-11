@@ -111,3 +111,83 @@ CREATE TABLE IF NOT EXISTS squawcreek.vendors (
   email VARCHAR(50) NULL,
   website VARCHAR(255) NULL,
   PRIMARY KEY (vendorID));
+  
+ -- Create Table Orders
+CREATE TABLE IF NOT EXISTS squawcreek.orders(
+orderID INT(15) NOT NULL AUTO_INCREMENT,
+ocustomerID INT(15) NULL,
+shipperID INT(15) NULL,
+orderDate DATE NULL,	
+requiredDate DATE NULL,	
+shippedDate DATE NULL,	
+orderTotal DECIMAL(8,2) NULL,
+orderComment VARCHAR(255) NULL,
+PRIMARY KEY (orderID),
+INDEX ocustomerID_IDX (ocustomerID ASC),
+INDEX shipperID_IDX (shipperID ASC),
+CONSTRAINT ocustomerID
+	FOREIGN KEY (ocustomerID)
+	REFERENCES squawcreek.customers (customerID),
+CONSTRAINT shipperID
+	FOREIGN KEY (shipperID)
+	REFERENCES squawcreek.shippers (shipperID));
+
+-- Create Table Financial Transactions
+CREATE TABLE IF NOT EXISTS squawcreek.financialTransactions (
+  financialTransactionsID INT(15) NOT NULL AUTO_INCREMENT,
+  forderID INT,
+  fcustomerID INT,
+  transactionTypeID INT,
+  authorizationNumber VARCHAR(15) NULL,
+  transactionDate DATETIME NULL,
+  transactionAmount INT NULL,
+  financialTransactionscol VARCHAR(45) NULL,
+  PRIMARY KEY (financialTransactionsID),
+  INDEX forderID_IDX (forderID ASC),
+  INDEX fcustomerID_IDX (fcustomerID ASC),
+  INDEX transactionTypeID_IDX (transactionTypeID ASC),
+  CONSTRAINT forderID
+    FOREIGN KEY (forderID)
+    REFERENCES squawcreek.orders (orderID),
+  CONSTRAINT fcustomerID
+    FOREIGN KEY (fcustomerID)
+    REFERENCES squawcreek.customers (customerID),
+  CONSTRAINT transactionTypeID
+    FOREIGN KEY (transactionTypeID)
+    REFERENCES squawcreek.transactionType (transactionTypeID));
+
+-- Create Table Products
+CREATE TABLE IF NOT EXISTS squawcreek.products (
+  productID INT(15) NOT NULL AUTO_INCREMENT,
+  vendorID INT,
+  productName VARCHAR(45) NULL,
+  buyPrice VARCHAR(45) NULL,
+  MSRP VARCHAR(45) NULL,
+  salesPrice VARCHAR(45) NULL,
+  quanityInStock VARCHAR(45) NULL,
+  reorderLevel VARCHAR(45) NULL,
+  productDescription VARCHAR(45) NULL,
+  htmlDescription VARCHAR(45) NULL,
+  image VARCHAR(45) NULL,
+  PRIMARY KEY (productID),
+  CONSTRAINT vendorID
+    FOREIGN KEY (vendorID)
+    REFERENCES squawcreek.vendors(vendorID)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+-- Create Table Order Details
+CREATE TABLE IF NOT EXISTS squawcreek.orderDetails(
+  orderLineID INT(15) NOT NULL AUTO_INCREMENT,
+  productID INT,
+  orderId INT,
+  quanityOrdered INT NULL,
+  priceEach DECIMAL(8,2) NULL,
+  orderDetailscol VARCHAR(45) NULL,
+  PRIMARY KEY (orderLineID),
+  CONSTRAINT productID
+    FOREIGN KEY (productID)
+    REFERENCES squawcreek.products (productID),
+  CONSTRAINT orderID
+    FOREIGN KEY (orderID)
+    REFERENCES squawcreek.orders (orderID));
