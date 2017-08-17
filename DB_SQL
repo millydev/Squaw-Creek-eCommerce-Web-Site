@@ -20,6 +20,7 @@ DROP TABLE IF EXISTS squawcreek.financialTransactions;
 DROP TABLE IF EXISTS squawcreek.vendors;
 DROP TABLE IF EXISTS squawcreek.products;
 DROP TABLE IF EXISTS squawcreek.orderDetails;
+DROP TABLE IF EXISTS squawcreek.calendarEvents;
 
 --------------------------------------------------------
 -- Create Tables
@@ -191,3 +192,11 @@ CREATE TABLE IF NOT EXISTS squawcreek.orderDetails(
   CONSTRAINT orderID
     FOREIGN KEY (orderID)
     REFERENCES squawcreek.orders (orderID));
+    
+-- Create Table Calendar Events
+CREATE TABLE IF NOT EXISTS squawcreek.calendarEvents(
+  calendarEventsId INT(15) NOT NULL AUTO_INCREMENT,
+  eventName VARCHAR(200) NULL,
+  startDate DATETIME NULL,
+  endDate DATETIME NULL,
+  PRIMARY KEY (calendarEventsId));
